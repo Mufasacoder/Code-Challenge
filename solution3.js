@@ -1,3 +1,4 @@
+let grossSalary = 10000000
 function calculateYearlyPaye (grossSalary) {
 
     if (grossSalary <= 960000){
@@ -58,20 +59,25 @@ function calculateNHIF(grossSalary){
         return deduction = 1700
     }
 
+    
+
 function calculateNSSF(grossSalary){
-    return NSSF = (grossSalary * .06)
+    return NSSF = (grossSalary * 0.06)
 }
 function calculateHousingLevy(grossSalary){
-    return housingLevy = (grossSalary * .015)
+    return housingLevy = (grossSalary * 0.015)
 }
 function calculateNetSalary(grossSalary){
-    const fullDeductions = calculateMonthlyPaye(grossSalary) + calculateNHIF(grossSalary) +calculateHousingLevy(grossSalary)
+    const fullDeductions = calculateYearlyPaye(grossSalary) + calculateNHIF(grossSalary) +calculateHousingLevy(grossSalary) + calculateNSSF(grossSalary)
     return netSalary = grossSalary - fullDeductions
 }
 }
- console.log("grossSalary") + console.log("grossSalary")
- console.log("Payee") + console.log(calculateMonthlyPaye(grossSalary))
+ console.log("grossSalary") + console.log(grossSalary)
+ console.log("Payee") + console.log(calculateYearlyPaye(grossSalary))
  console.log("NHIF Deductions") + console.log(calculateNHIF(grossSalary))
  console.log("NSSF Deductions") + console.log(calculateNSSF(grossSalary))
  console.log("Housing Levy") + console.log(calculateHousingLevy(grossSalary))
  console.log("NetSalary") + console.log(calculateNetSalary(grossSalary))
+
+
+ 
