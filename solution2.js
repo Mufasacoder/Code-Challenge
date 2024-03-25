@@ -3,15 +3,16 @@ function checkSpeed(speed){
     const pointLimit = 12;
 
     if (speed < speedLimit) {
-        console.log('ok')
+        return'ok'
     }
-    const points = Math.floor((speed - speedLimit) /5);
+    const points = ((speed - speedLimit) /5);
 
     if (points >= pointLimit) {
-    console.log('License suspended');
+        return 'License suspended';
     }
     else {
-        return points;
+        return points
     }
     
 }
+console.log(checkSpeed(200))

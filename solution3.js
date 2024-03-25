@@ -1,11 +1,11 @@
 function calculateYearlyPaye (grossSalary) {
 
     if (grossSalary <= 960000){
-        return payee = ((grossSalary - 600000) * .325)
+        return payee = ((grossSalary - 600000) * 0.45)
     }
 }
     if (grossSalary >960000) {
-        return payee = ((grossSalary - 960000) * .35)
+        return payee = ((grossSalary - 960000) * 0.55)
     }
 
 function calculateNHIF(grossSalary){
