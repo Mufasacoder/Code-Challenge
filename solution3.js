@@ -1,83 +1,82 @@
-let grossSalary = 10000000
-function calculateYearlyPaye (grossSalary) {
 
+function calculateYearlyPaye (grossSalary) {
+   
     if (grossSalary <= 960000){
-        return payee = ((grossSalary - 600000) * 0.45)
+        return payee = grossSalary - 600000 * 0.45
+    }
+
+    else if (grossSalary >960000) {
+        return payee = grossSalary - 960000 * 0.55
     }
 }
-    if (grossSalary >960000) {
-        return payee = ((grossSalary - 960000) * 0.55)
-    }
-
 function calculateNHIF(grossSalary){
     if (grossSalary < 5999 ){
-        return deduction = 150
+      return grossSalary -  150
     }
-    if (grossSalary <= 7999){
-        return deduction = 300
+    else if (grossSalary <= 7999){
+        return grossSalary - 300
     }
-    if (grossSalary <= 11999){
-        return deduction = 400
+    else if (grossSalary <= 11999){
+        return grossSalary - 400
     }
-    if (grossSalary <= 19999){
-        return deduction = 600
+    else if (grossSalary <= 19999){
+        return grossSalary - 600
     }
-    if (grossSalary <= 24999){
-        return deduction = 750
+   else if (grossSalary <= 24999){
+        return grossSalary - 750
     }
-    if (grossSalary <= 29999){
-        return deduction = 850
+    else if (grossSalary <= 29999){
+        return grossSalary - 850
     }
-    if (grossSalary <= 34999){
-        return deduction = 900
+    else if (grossSalary <= 34999){
+        return grossSalary - 900
     }
-    if (grossSalary <= 39999){
-        return deduction = 950
+    else if (grossSalary <= 39999){
+        return grossSalary - 950
     }
-    if (grossSalary <= 44999){
-        return deduction = 1000
+    else if (grossSalary <= 44999){
+        return grossSalary - 1000
     }
-    if (grossSalary <= 49999){
-        return deduction = 1100
+    else if (grossSalary <= 49999){
+        return grossSalary - 1100
     }
-    if (grossSalary <= 59999){
-        return deduction = 1200
+    else if (grossSalary <= 59999){
+        return grossSalary - 1200
     }
-    if (grossSalary <= 69999){
-        return deduction = 1300
+    else if (grossSalary <= 69999){
+        return grossSalary - 1300
     }
-    if (grossSalary <= 79999){
-        return deduction = 1400
+    else if (grossSalary <= 79999){
+        return grossSalary - 1400
     }
-    if (grossSalary <= 89999){
-        return deduction = 1500
+    else if (grossSalary <= 89999){
+        return grossSalary - 1500
     }
-    if (grossSalary <= 99999){
-        return deduction = 1600
+    else if (grossSalary <= 99999){
+        return grossSalary - 1600
     }
-    if (grossSalary > 100000){
-        return deduction = 1700
+    else if (grossSalary > 100000){
+        return grossSalary - 1700
     }
-
-    
-
+}
 function calculateNSSF(grossSalary){
-    return NSSF = (grossSalary * 0.06)
+    NSSF = grossSalary * 0.06
+    console.log(NSSF)
+    return NSSF;
 }
 function calculateHousingLevy(grossSalary){
-    return housingLevy = (grossSalary * 0.015)
+   housingLevy = grossSalary * 0.015
+   console.log(housingLevy)
+   return  housingLevy;
 }
-function calculateNetSalary(grossSalary){
-    const fullDeductions = calculateYearlyPaye(grossSalary) + calculateNHIF(grossSalary) +calculateHousingLevy(grossSalary) + calculateNSSF(grossSalary)
-    return netSalary = grossSalary - fullDeductions
+
+const calculateNetSalary = (grossSalary) =>{
+    const fullDeductions = calculateYearlyPaye(grossSalary) + calculateNHIF(grossSalary) + calculateHousingLevy(grossSalary) + calculateNSSF(grossSalary)
+    console.log(grossSalary)
+    console.log("full",fullDeductions)
+    // return  grossSalary - fullDeductions
 }
-}
- console.log("grossSalary") + console.log(grossSalary)
- console.log("Payee") + console.log(calculateYearlyPaye(grossSalary))
- console.log("NHIF Deductions") + console.log(calculateNHIF(grossSalary))
- console.log("NSSF Deductions") + console.log(calculateNSSF(grossSalary))
- console.log("Housing Levy") + console.log(calculateHousingLevy(grossSalary))
- console.log("NetSalary") + console.log(calculateNetSalary(grossSalary))
 
 
- 
+
+calculateNetSalary(70000)
